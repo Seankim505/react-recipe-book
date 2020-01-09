@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-reactrecipebook-dev-134647-authRole",
+            "UnauthRoleArn": "arn:aws:iam::532332789475:role/amplify-reactrecipebook-dev-134647-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::532332789475:role/amplify-reactrecipebook-dev-134647-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-reactrecipebook-dev-134647-deployment",
+            "UnauthRoleName": "amplify-reactrecipebook-dev-134647-unauthRole",
+            "StackName": "amplify-reactrecipebook-dev-134647",
+            "StackId": "arn:aws:cloudformation:us-east-1:532332789475:stack/amplify-reactrecipebook-dev-134647/63d7c5c0-3310-11ea-bdc9-0e1b8dfea4f7",
+            "AmplifyAppId": "do86l2wupthzv"
+        }
+    }
+}
