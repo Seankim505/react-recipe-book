@@ -2,13 +2,11 @@ import React from 'react';
 import { Input } from 'reactstrap';
 import { GiKnifeFork } from 'react-icons/gi';
 
-
-
 const Banner = (props) => {
-    const filterName =  () => {
+    const filterName = () => {
         console.log('Filtering by Name');
     }
-    const filterType =  () => {
+    const filterType = () => {
         console.log('Filtering by Type');
     }
 

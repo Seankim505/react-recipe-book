@@ -60,8 +60,17 @@ code {
   float:right;
 }
 
+.ModalButtons {
+  float:right;
+  margin-right: 5em;
+}
+
 .newRecipeDetails {
-  width: 65%;
+  width: 100%;
+}
+
+.newRecipeInputs {
+  width: 85%;
 }
 
 @media (min-height: 400px) {
