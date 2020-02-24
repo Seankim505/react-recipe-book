@@ -1,12 +1,14 @@
 
 import React, { Component } from 'react';
+import RecipeDetails from './RecipeDetails'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import RecipeForm from './RecipeForm';
+
 
 class ViewModal extends Component {
 
   constructor(props) {
     super(props)
+    console.log(this.props)
     this.state = {
       modal: false
     }
@@ -25,10 +27,10 @@ class ViewModal extends Component {
       <span className="modal-test">
         <Button color="secondary" onClick={this.toggle}>View</Button>
         <Modal unmountOnClose={false} size="lg" isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>{this.props.recipeName}</ModalHeader>
+          <ModalHeader toggle={this.toggle}>{this.props.rec.name}</ModalHeader>
           <ModalBody>
           <div>
-            Display the recipe stuff here in a new component
+            <RecipeDetails rec={this.props.rec}></RecipeDetails>
           </div>
           </ModalBody>
           <ModalFooter>

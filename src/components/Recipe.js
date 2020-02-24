@@ -7,7 +7,6 @@ import { deleteRecipe} from '../graphql/mutations'
 
 const Recipe = (props) => {
 
-  //Deletes recipe from DB
   const tossRecipe = async (recipeID) => {
     console.log('deleting Recipe with ID: '+ recipeID)
     try {
@@ -20,11 +19,6 @@ const Recipe = (props) => {
     
   }
 
-  //Adds Recipe to DB
-  const viwRecipe = async (recipeID) => {
-    console.log('cookin up a new recipe')
-  }
-
   return (
     <div key={props.recipeData.rec.id} className="col-sm-3">
       <div className="listItems">
@@ -33,7 +27,7 @@ const Recipe = (props) => {
           <CardBody>
           <CardTitle>{props.recipeData.rec.name}</CardTitle>
           <span>
-            <ViewModal recipeName={props.recipeData.rec.name}></ViewModal>
+            <ViewModal rec={props.recipeData.rec}></ViewModal>
             <EditRecipeForm recipeDetails={props.recipeData.rec}></EditRecipeForm>
             <Button color="danger" onClick={() => tossRecipe(props.recipeData.rec.id)} style={{float: 'right'}}>X</Button>
           </span>

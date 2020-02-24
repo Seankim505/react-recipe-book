@@ -33,9 +33,9 @@ class RecipeList extends Component {
         <div className="cardContainer">
           <CardDeck>
             <Row>
-                { 
-                  this.state.recipeList.map((rec,i)=>(
-                  <Recipe key={{i}} recipeData={{rec}}></Recipe>
+              { 
+                this.state.recipeList.map((rec,i)=>(
+                <Recipe key={{i}} recipeData={{rec}}></Recipe>
                 ))
               }
             </Row>

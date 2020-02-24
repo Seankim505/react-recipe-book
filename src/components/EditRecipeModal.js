@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
-import RecipeForm from './RecipeForm';
+import EditRecipeForm from './EditRecipeForm';
 
 class EditRecipeModal extends Component {
 
@@ -28,7 +28,7 @@ class EditRecipeModal extends Component {
           <ModalHeader toggle={this.toggle}>{this.props.recipeDetails.name}</ModalHeader>
           <ModalBody>
           <div>
-            <RecipeForm formToggle={this.toggle}></RecipeForm>
+            <EditRecipeForm recipeDetails={this.props.recipeDetails} formToggle={this.toggle}></EditRecipeForm>
           </div>
           </ModalBody>
         </Modal>

@@ -73,6 +73,10 @@ code {
   width: 85%;
 }
 
+.ingredient-list {
+  padding-top: 1em;
+}
+
 @media (min-height: 400px) {
   .jumbotron {
     padding-bottom: 2em;

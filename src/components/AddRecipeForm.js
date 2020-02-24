@@ -10,16 +10,17 @@ import {
 import { API, graphqlOperation } from 'aws-amplify'
 import { createRecipe } from '../graphql/mutations'
 
-class RecipeForm extends Component {
+class AddRecipeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: '',
-      type: '',
+      type: 'Breakfast',
       image: '',
       ingredients: [],
       instructions: ''
     }
+    this.addNewRecipe = this.addNewRecipe.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -33,8 +34,14 @@ class RecipeForm extends Component {
     console.log('Adding Recipe to DB')
     try {
       let ingredients = this.state.ingredients
-      let ingredientArray = ingredients.split(',');
+      let ingredientArray;
+      if (ingredients.includes(',')) {
+        ingredientArray = ingredients.split(',');
+      } else {
+        ingredientArray = ingredients;
+      }
       console.log(ingredientArray)
+      console.log(JSON.stringify(this.state))
       let recipe = {
         name: this.state.name,
         type: this.state.type,
@@ -50,7 +57,7 @@ class RecipeForm extends Component {
 
   render() {
     return (
-      <Form className="newRecipeDetails" onSubmit={() => this.addNewRecipe()}>
+      <Form className="newRecipeDetails" onSubmit={this.addNewRecipe()}>
         <div className="newRecipeInputs">
           <FormGroup>
             <Label>Recipe Title</Label>
@@ -116,4 +123,4 @@ class RecipeForm extends Component {
   }
 }
 
-export default RecipeForm;
+export default AddRecipeForm;
