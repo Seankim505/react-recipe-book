@@ -14,7 +14,6 @@ class newRecipeModal extends Component {
   }
 
   toggle = () => {
-    console.log('toggled')
     this.setState({
       modal: !this.state.modal
     });

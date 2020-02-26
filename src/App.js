@@ -6,24 +6,35 @@ import './App.css'
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.sortByTitle = this.sortByTitle.bind(this);
+    this.sortbyType = this.sortbyType.bind(this);
     this.state={ 
-      id:'', 
-      name:'', 
-      ingredients:'', 
-      instructions:'',
-      type:'Breakfast', 
-      view:'list',
-      image:''
-    }
+      title: '',
+      type: ''
+    };
   }
   
+  sortbyType = (typeValue) => {
+    console.log(typeValue)
+    this.setState({
+      type: typeValue
+    });
+  }
+
+  sortByTitle(titleValue) {
+    console.log(titleValue)
+    this.setState({
+      title: titleValue
+    });
+  }
+
   render() {
     return (
       <div>
-        <Banner></Banner>
+        <Banner sortTitles={this.sortByTitle} sortTypes={this.sortbyType}></Banner>
         <AddRecipeModal></AddRecipeModal>
-        <RecipeList></RecipeList>
+        <RecipeList selectedTitles={this.state.title} selectedTypes={this.state.type}></RecipeList>
       </div>
     );
   }

@@ -3,11 +3,13 @@ import { Input } from 'reactstrap';
 import { GiKnifeFork } from 'react-icons/gi';
 
 const Banner = (props) => {
-    const filterName = () => {
+    const filterName = (value) => {
         console.log('Filtering by Name');
+        props.sortTitles(value);
     }
-    const filterType = () => {
+    const filterType = (value) => {
         console.log('Filtering by Type');
+        props.sortTypes(value);
     }
 
     return (
@@ -17,8 +19,8 @@ const Banner = (props) => {
                 <GiKnifeFork />&nbsp;Sean's Cookbook
             </h1>
             <div className="inputContainer">
-              <Input className="searchbar" type="text" placeholder="Search Recipe by Name" onChange={() => filterName}></Input>
-              <Input className="selectpicker" type="select" onChange={() => filterType}>
+              <Input className="searchbar" type="text" placeholder="Search Recipe by Name" onChange={(e) => filterName(`${e.target.value}`)}></Input>
+              <Input className="selectpicker" type="select" onChange={(e) => filterType(`${e.target.value}`)}>
                 <option value="All">All</option>
                 <option value="Breakfast">Breakfast</option>
                 <option value="Lunch">Lunch</option>
